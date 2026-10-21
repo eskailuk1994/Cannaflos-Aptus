@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,22 +29,22 @@
     }
     .app-shell { width: 100%; max-width: 1440px; margin: auto; padding: 20px; }
     .panel { background: #182019f0; border: 1px solid var(--line); box-shadow: 0 14px 38px #0003; }
-    .hero { position: relative; min-height: 200px; overflow: hidden; border: 1px solid var(--line); background: #172018; }
+    .hero { position: relative; min-height: 180px; overflow: hidden; border: 1px solid var(--line); background: #172018; }
     .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
     .hero:after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #0a0e0bf2 10%, #0a0e0bc0 60%, #0a0e0b72); pointer-events: none; }
     .hero-content { position: relative; z-index: 1; }
-    .brand-lockup { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; flex-wrap: wrap; }
-    .brand-logo-img { height: 32px; width: auto; object-fit: contain; background: #ffffff10; padding: 3px 8px; border-radius: 4px; border: 1px solid #344237; }
-    .brand-separator { color: var(--orange); font-weight: 700; font-size: 1.2rem; }
     .hero-links { position: absolute; right: 24px; top: 24px; display: flex; gap: 10px; z-index: 10; }
     .mono, .eyebrow, th { font-family: "Space Mono", monospace; }
     .eyebrow { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); }
     .nav-tab { color: #c2ccc1; border-bottom: 2px solid transparent; white-space: nowrap; transition: all 0.2s; cursor: pointer; }
     .nav-tab:hover { background: #ffffff0c; color: white; }
-    .nav-tab.is-active { color: var(--green); border-color: var(--orange); background: #ff7a1a14; }
+    .nav-tab.is-active { color: var(--green); border-color: var(--orange); background: rgba(255, 122, 26, 0.08); }
     .view { display: none; }
     .view.is-active { display: block; animation: rise 0.25s ease both; }
-    @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; }
     .data-table { width: 100%; min-width: 760px; border-collapse: collapse; }
     .data-table th { text-align: left; padding: 0.8rem; color: var(--green); font-weight: 400; font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; background: #121a13; border-bottom: 1px solid var(--line); }
@@ -53,22 +53,21 @@
     .cell-control { width: 100%; background: #101610; color: var(--cream); border: 1px solid #344237; border-radius: 4px; padding: 0.4rem; font-size: 0.8rem; }
     .button-primary { background: var(--orange); color: #1b160f; border: 1px solid var(--orange); font-weight: 700; border-radius: 6px; padding: 0.6rem 1rem; transition: all 0.2s; cursor: pointer; }
     .button-primary:hover { filter: brightness(1.15); transform: translateY(-1px); }
-    .button-secondary { background: #a8da4d0f; color: var(--green); border: 1px solid #5d7741; font-weight: 600; border-radius: 6px; padding: 0.5rem 0.9rem; transition: all 0.2s; cursor: pointer; }
-    .button-secondary:hover { background: #a8da4d22; }
+    .button-secondary { background: rgba(168, 218, 77, 0.06); color: var(--green); border: 1px solid #5d7741; font-weight: 600; border-radius: 6px; padding: 0.5rem 0.9rem; transition: all 0.2s; cursor: pointer; }
+    .button-secondary:hover { background: rgba(168, 218, 77, 0.13); }
     .choice.is-active { background: var(--orange) !important; color: #1b160f !important; border-color: var(--orange) !important; }
     .step-button { width: 100%; text-align: left; border: 1px solid #405243; border-radius: 6px; background: #121912; color: #d5ded2; padding: 0.65rem 0.8rem; font: 0.78rem "Space Mono", monospace; cursor: pointer; transition: all 0.2s; }
     .step-button.done { background: var(--green); border-color: var(--green); color: #172012; font-weight: 700; }
-    .alert-box { border-left: 3px solid var(--orange); background: #ff7a1a14; color: #ffd3af; }
+    .alert-box { border-left: 3px solid var(--orange); background: rgba(255, 122, 26, 0.08); color: #ffd3af; }
   </style>
 </head>
 <body>
   <div class="app-shell">
-    <!-- CABECERA PRINCIPAL CON TUS LOGOS NUEVOS -->
+    <!-- CABECERA PRINCIPAL SIN LOGOS -->
     <header class="hero rounded-lg p-6 md:p-8 mb-4">
       <img class="hero-image" src="https://images.unsplash.com/photo-1536819114556-1e10f967fb61?auto=format&fit=crop&w=1200&q=80" alt="Cannabis Header">
       <div class="hero-content">
         <p class="eyebrow mb-2">CANNAFLOS + APTUS · TRUE PLANT SCIENCE</p>
-        <div class="brand-lockup">
         <h1 class="text-3xl font-bold tracking-tight text-white mb-1">MOTHERS & CLONES</h1>
         <p class="text-sm text-[#c2ccc1]">Plant traceability, irrigation, mixing and weekly Aptus production programs</p>
       </div>
@@ -342,8 +341,8 @@
 
           <!-- TABLA CLEAN -->
           <div id="feed-img-clean" class="feed-view-group hidden space-y-4">
-            <img src="clean-tabla.jpg" class="w-full h-auto rounded border border-[#344237]" alt="Aptus Clean Table">
-            <img src="clean-botellas.jpg" class="w-full h-auto rounded border border-[#344237]" alt="Aptus Clean Bottles">
+            <img src="clean-tabla1.jpg" class="w-full h-auto rounded border border-[#344237]" alt="Aptus Clean Table">
+            <img src="cleanbottles.jpg" class="w-full h-auto rounded border border-[#344237]" alt="Aptus Clean Bottles">
           </div>
         </div>
       </section>
